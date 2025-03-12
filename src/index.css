@@ -1,0 +1,47 @@
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Eina03";
+  src: url("/public/fonts/Eina/Eina03-SemiBold.ttf") format("truetype");
+}
+  @font-face {
+    font-family: "Eina03L";
+    src: url("/fonts/Eina/Eina03-Light.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "CochinR";
+    src: url("/fonts/Cochin/Cochin Regular/Cochin Regular.otf") format(".opentype");
+  }
+  @font-face {
+    font-family: "Eina03-Regular";
+    src: url("/fonts/Eina/Eina03-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Eina03-Bold";
+    src: url("/fonts/Eina/Eina03-Bold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Eina02-SemiBold";
+    src: url("/fonts/Eina/Eina02-SemiBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Heaters";
+    src: url("/fonts/Heaters.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "CochinItalic";
+    src: url("public/fonts/Cochin/Cochin Italic/Cochin Italic.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "CochinBoldItalic";
+    src: url("public/fonts/Cochin/Cochin Bold Italic/Cochin Bold Italic.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Mont-Heavy";
+    src: url("/public/fonts/mont-heavy.ttf") format("truetype");
+    
+  }
