@@ -14,7 +14,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, onClick }) => (
     </div>
 );
 
-const Menu = () => {
+const Menu = ({ onClose }) => {
     const Item = [
         "Products",
         "Online Catalogues",
@@ -24,8 +24,8 @@ const Menu = () => {
         "Contact Us",
     ];
     return (
-        <div className='w-[375px] h-[712px] pb-10 bg-white flex flex-col'>
-            <Header />
+        <div className='w-[375px] h-[712px] pb-10 bg-white flex flex-col absolute top-0'>
+            <Header onClose={onClose} />
             <div className='h-full flex flex-col justify-between'>
                 <div>
                     {Item.map((item, index) => (

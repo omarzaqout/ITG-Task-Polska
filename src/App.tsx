@@ -1,28 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Home/NavBar';
 import Footer from './components/Home/Footer';
-import { Home } from './pages/Home';
 import PLP from './pages/PLP';
-import Filter from './components/filter';
-import Menu from './components/Menu/Menu';
+import Menu from './components/Menu/Menu'; // تأكد من المسار الصحيح
 import PDP from './pages/PDP';
+import { Home } from './pages/Home';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Router>
+    <Router>
+      <div className="app-container">
+        <Navbar />
 
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<PLP />} />
-          {/* <Route path="/" element={<Filter />} /> */}
+          <Route path="/PLP" element={<PLP />} />
+          {/* <Route path="/menu" element={<Menu />} /> */}
+          <Route path="/" element={<Home />} />
           {/* <Route path="/" element={<Menu />} /> */}
-          {/* <Route path="/" element={<PDP />} /> */}
+          <Route path="/PDP" element={<PDP />} />
         </Routes>
+
         <Footer />
-      </Router>
-    </>
+      </div>
+    </Router>
   );
 }
 

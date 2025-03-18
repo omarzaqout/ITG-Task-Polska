@@ -1,7 +1,19 @@
 
+import { useState } from 'react';
 import MenuDesktop from '../Menu/menu-desktop';
+import Menu from '../Menu/Menu';
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
   return (
+
     <div className='flex flex-col min-w-[375px]  min-h-[106px] w-full bg-black z-20  lg:h-[168px]  lg:p-[12px_107px_24px_108px] justify-between lg:sticky lg:top-0' style={{ boxShadow: "inset 0 -2px 0 0 #d6ac76" }}>
       {/* Navigation */}
       <nav className="flex  min-w-[375px] w-full justify-between px-4 h-16 pb-2 pt-[3px] text-white leading-4 lg:p-0" >
@@ -9,7 +21,8 @@ const Navbar = () => {
         {/*section1*/}
         <div className="flex flex-row items-center justify-between gap-[25px] sm:gap-[28px] xl:gap-[23px]">
           {/* Menu */}
-          <div className="flex flex-col items-center ml-0 mb-0 text-white lg:hidden">
+          <div className="flex flex-col items-center ml-0 mb-0 text-white lg:hidden " onClick={toggleMenu}>
+
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
               <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3">
                 <path d="M3 12.5L13 12.5M3 19.5L19 19.5M3 5.5L21 5.5" />
@@ -17,6 +30,7 @@ const Navbar = () => {
             </svg>
 
             <span className="h-[12px] w-[40px] font-normal text-[12px] tracking-[0.2px] text-center">Menu</span>
+
           </div>
           {/* Artist */}
           <div className="flex flex-col items-center justify-center mb-0  text-[12px] font-normal tracking-tight text-white text-center">
@@ -108,6 +122,12 @@ const Navbar = () => {
           <div className='hidden w-[292px] h-[1px] m-[3px_1px_0_0] border border-solid border-[#ffffff] lg:flex'></div>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-30" onClick={toggleMenu}>
+          <div className="w-[375px] h-full bg-white" onClick={(e) => e.stopPropagation()}>
+            <Menu onClose={closeMenu} />          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ onClose = () => { } }) => {
     return (
 
-        <div className='w-full h-16 flex flex-row py-5 px-6 shadow-[inset_0_-2px_0_0_#d6ac76] bg-black'>
-            <div className='w-6 h-6 text-center text-white'>
+        <div className='w-full h-16 flex flex-row py-5 px-6 shadow-[inset_0_-2px_0_0_#d6ac76] lg:hidden bg-black'>
+            <div className='w-6 h-6 text-center text-white' onClick={onClose}>
                 <span>X</span>
             </div>
             <div className='w-[70px] h-3.5 m-[5px_40px_5px_105px]'>
