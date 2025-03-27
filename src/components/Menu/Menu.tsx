@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 interface MenuItemProps {
     label: string;
@@ -13,15 +14,25 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, onClick }) => (
         </svg>
     </div>
 );
+interface MenuProps {
+    onClose: () => void;
+}
 
-const Menu = ({ onClose }) => {
+const Menu: React.FC<MenuProps> = ({ onClose }) => {
+    const navigate = useNavigate();
+    const toProducts = () => {
+        navigate('/PDP');
+        onClose();
+
+    };
+
     const Item = [
-        "Products",
-        "Online Catalogues",
-        "Find our Stores",
-        "New Products",
-        "About Us",
-        "Contact Us",
+        { label: "Products", onClick: toProducts },
+        { label: "Online Catalogues", onClick: () => console.log("Online Catalogues") },
+        { label: "Find our Stores", onClick: () => console.log("Find our Stores") },
+        { label: "New Products", onClick: () => console.log("New Products") },
+        { label: "About Us", onClick: () => console.log("About Us") },
+        { label: "Contact Us", onClick: () => console.log("Contact Us") },
     ];
     return (
         <div className='w-[375px] h-[712px] pb-10 bg-white flex flex-col absolute top-0'>
@@ -29,7 +40,7 @@ const Menu = ({ onClose }) => {
             <div className='h-full flex flex-col justify-between'>
                 <div>
                     {Item.map((item, index) => (
-                        <MenuItem key={index} label={item} onClick={() => console.log(item)} />
+                        <MenuItem key={index} label={item.label} onClick={item.onClick} />
                     ))}
                 </div>
                 <div className='w-full flex flex-col items-center justify-center'>

@@ -41,13 +41,13 @@ const PLP = () => {
                     <span className=' h-4 lg:h-6 lg:leading-[24px] '>Every day. Something New.</span>
                 </div>
                 <div className='flex flex-row justify-between m-[0_16px_0_16px] lg:m-[0_0_18px_0]'>
-                    <div className="w-[166px] h-[36px] px-[8px] py-[6px] lg:w-[288px] border border-black bg-gray-100 lg:p-0 flex">
-                        <div className='hidden lg:flex lg:w-[88px] font-[Eina03] text-[12px] h-full bg-black uppercase text-[#edb15d] lg:p-[10px_6px] items-center justify-center'>
+                    <div className="w-[166px] h-[36px] px-[8px] py-[6px] lg:w-[288px] border border-black bg-gray-100 lg:p-0 flex items-center">
+                        <div className='flex max-lg:w-13.5 max-lg:mr-2 text-nowrap font-[Eina03-Regular] text-[#555453]
+                          lg:w-[88px]  text-[12px] h-[36px] lg:bg-black uppercase lg:text-[#edb15d] lg:p-[10px_6px] items-center justify-center'>
                             <span>Sort by</span>
                         </div>
 
-                        <div className='w-full h-4 text-4 flex items-center lg:h-auto lg:p-[6px_6px_6px_16px] lg:border lg:border-solid lg:bg-[#f5f5f5]'>
-                            <span className='w-13.5 font-[Eina03-Regular] mr-2 text-[#555453] lg:hidden '>Sort by</span>
+                        <div className='w-full h-4 text-4 flex items-center lg:h-[36px] lg:p-[6px_6px_6px_16px] lg:border lg:border-solid lg:bg-[#f5f5f5]'>
                             <div className='w-10.5 flex items-center text-black ] font-[Eina03]'>
                                 <span className='text-black font-[Eina03] mr-1'>Date</span>
                                 <span className='hidden lg:flex'>added</span>
@@ -59,17 +59,15 @@ const PLP = () => {
 
 
                     </div>
-                    <div className='flex flex-col hover:cursor-pointer' onClick={toggleFilter}>
-                        <div className="w-[166px] h-[36px]  px-[8px] py-[6px] md:p-0 border lg:w-[288px] border-black flex bg-gray-100">
-                            <div className='hidden md:flex w-[101px] p-[8px_20px] items-center text-[#edb15d] justify-center bg-black'>
-                                <span className='  font-[Eina03] uppercase'>Filter</span>
+                    <div className='flex flex-col h-[36px] hover:cursor-pointer' onClick={toggleFilter}>
+                        <div className="w-[166px] h-[36px]  px-[8px] py-[6px] lg:p-0 border lg:w-[288px] border-black flex bg-gray-100 ">
+                            <div className=' w-[39px]   font-[Eina03-Regular]  text-[#555453] lg:flex lg:w-[101px] lg:p-[8px_20px] lg:items-center  lg:text-[#edb15d] lg:justify-center lg:bg-black'>
+                                <span className='  font-[Eina03] lg:uppercase'>Filter</span>
 
                             </div>
 
-                            <div className='h-4 text-4 flex flex-row md:p-[6px_6px_6px_16px] md:h-full md:w-full justify-between items-center'>
-                                <span className='w-[39px]  font-[Eina03-Regular]  text-[#555453] lg:hidden'>Filter</span>
-
-                                <span className='text-nowrap text-black font-[Eina03] ml-2 mr-[6px] md:m-0' >4 <span className='mr-1 hidden md:inline-flex'>filters</span>applied</span>
+                            <div className='h-[36px] text-4 flex flex-row lg:p-[6px_6px_6px_16px] lg:h-[36px] lg:w-full justify-between lg:items-center'>
+                                <span className=' text-nowrap text-black font-[Eina03] ml-2 mr-[6px] lg:m-0' >4 <span className='mr-1 hidden lg:inline-flex'>filters</span>applied</span>
 
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -83,7 +81,7 @@ const PLP = () => {
                         {showFilter && (
                             <div
                                 className={`${window.innerWidth >= 768 ? "absolute z-[14]" : "fixed top-0 left-0 w-full h-full"
-                                    } z-20 bg-white shadow-lg md:mt-[36px] md:ml-0`}
+                                    } z-20 bg-white shadow-lg lg:mt-[38px] lg:ml-0`}
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <Filter onClose={closeFilter} />

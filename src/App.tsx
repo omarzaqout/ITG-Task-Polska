@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Home/NavBar';
 import Footer from './components/Home/Footer';
 import PLP from './pages/PLP';
-import Menu from './components/Menu/Menu'; // تأكد من المسار الصحيح
+import Menu from './components/Menu/Menu';
 import PDP from './pages/PDP';
 import { Home } from './pages/Home';
 
@@ -13,11 +13,11 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/PLP" element={<PLP />} />
+          {/* <Route path="/PLP" element={<PLP />} /> */}
           {/* <Route path="/menu" element={<Menu />} /> */}
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/" element={<Menu />} /> */}
-          <Route path="/PDP" element={<PDP />} />
+          <Route path="/" element={<PDP />} />
         </Routes>
 
         <Footer />
